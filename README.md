@@ -1,4 +1,6 @@
-techgirlsaresuperheroes
-=======================
+Tech Girls are Superheroes
+==========================
 
-Tech Girls are Superheroes (http://www.techgirlsaresuperheroes.org/)
+Project for Tech Girls are Superheroes (http://www.techgirlsaresuperheroes.org/)
+
+Started on 06/12/14 at [RHoK Brisbane](http://rhokbrisbane.org/)
