@@ -4,13 +4,20 @@ ruby '2.1.5'
 gem 'rails', '4.1.8'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
-gem 'jbuilder', '~> 2.0'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
+gem 'rails_12factor', group: :production
+gem 'unicorn'
+gem 'twilio-ruby'
+gem 'textacular'
 
 group :development do
   gem 'pry-byebug'
