@@ -3,10 +3,13 @@ ruby '2.1.5'
 
 gem 'rails', '4.1.8'
 
+<<<<<<< Updated upstream
 gem 'activeadmin', github: 'activeadmin'
+=======
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
+>>>>>>> Stashed changes
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'haml-rails'
