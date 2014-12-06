@@ -16,8 +16,8 @@ class TwilioSms
   private
 
   def setup_twilio_client
-    account_sid = ENV["TWILIO_ACCOUNT_SID"]
-    auth_token  = ENV["TWILIO_AUTH_TOKEN"]
+    account_sid = Rails.application.secrets.twilio_account_sid
+    auth_token  = Rails.application.secrets.twilio_auth_token
     @client     = Twilio::REST::Client.new(account_sid, auth_token)
   end
 
