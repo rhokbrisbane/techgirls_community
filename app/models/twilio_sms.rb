@@ -1,7 +1,6 @@
 class TwilioSms
   include ActiveModel::Model
-  attr_reader :to, :from, :client
-  validate setup_twilio_client
+  attr_reader :to, :from, :client, :superhero_name
   validates_presence_of :to, :from
 
   def initialize(args)
@@ -11,6 +10,7 @@ class TwilioSms
   end
 
   def send
+    setup_twilio_client
     client.account.messages.create(to, from, body)
   end
 
@@ -23,7 +23,8 @@ class TwilioSms
   end
 
   def body
-    "You are a girl! YAYAYA"
+    "Welcome #{superhero_name} to the #techgirls sisterhood!
+    Thank you for sharing your story. It has been posted to http://bit.ly/1vZr3wd"
   end
 
 end

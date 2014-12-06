@@ -1,4 +1,5 @@
 class SmsController < ApplicationController
+  validate current_user
 
   def send
     sms = TwilioSms.new(params)
