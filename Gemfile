@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'rails_12factor', group: :production
 gem 'unicorn'
 gem 'twilio-ruby'
+gem 'textacular'
 
 group :development do
   gem 'pry-byebug'
