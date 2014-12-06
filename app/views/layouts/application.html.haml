@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     = viewport_meta_tag
-    %title= content_for?(:title) ? yield(:title) : "Tech Girls Communtiy"
+    %title= content_for?(:title) ? yield(:title) : "Tech Girls Community"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
@@ -34,8 +34,8 @@
           = yield
     #search
       %button.close{:type => "button"} ×
-      %form
-        %input{:placeholder => "type keyword(s) here", :type => "search", :value => ""}/
+      =form_tag root_path, :method => "get" do 
+        %input{:placeholder => "type keyword(s) here", :type => "search", :value => "", :name => "search"}/
         %button.btn.btn-primary{:type => "submit"} Search
       %footer
         %p &copy; Company 2014
