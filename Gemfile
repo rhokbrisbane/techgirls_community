@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
+gem 'unicorn'
 
 group :development do
   gem 'pry-byebug'
