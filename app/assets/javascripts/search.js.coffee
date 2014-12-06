@@ -9,8 +9,4 @@ $(document).ready ->
     $(this).removeClass "open"  if event.target is this or event.target.className is "close" or event.keyCode is 27
     return
 
-  $("form").submit (event) ->
-    event.preventDefault()
-    false
-
   return

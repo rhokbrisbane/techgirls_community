@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'stories#index'
-
   resources :stories, only: [:index, :create]
 end

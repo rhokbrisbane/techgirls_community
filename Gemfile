@@ -11,16 +11,23 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'mandrill-api'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails_12factor', group: :production
 gem 'unicorn'
+gem 'twilio-ruby'
+gem 'textacular'
 
 group :development do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'dotenv-rails'
 end
 
 group :test do
