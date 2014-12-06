@@ -5,8 +5,9 @@ class TwilioSms
   validates_presence_of :to, :from
 
   def initialize(args)
-    @to   = args[:to]
-    @from = args[:from]
+    @to             = args[:to]
+    @from           = args[:from]
+    @superhero_name = args[:superhero_name]
   end
 
   def send
