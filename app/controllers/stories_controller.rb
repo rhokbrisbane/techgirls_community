@@ -1,7 +1,11 @@
 class StoriesController < ApplicationController
   def index
     
-    @stories = Story.all
+    if terms = params[:search] 
+      @stories = Story.basic_search(terms)
+    else  
+      @stories = Story.all
+    end
 
   end
 
