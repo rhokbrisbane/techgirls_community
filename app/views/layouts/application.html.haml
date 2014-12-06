@@ -34,8 +34,8 @@
           = yield
     #search
       %button.close{:type => "button"} ×
-      %form
-        %input{:placeholder => "type keyword(s) here", :type => "search", :value => ""}/
+      %form{:action => root_path, :method => "get"}
+        %input{:placeholder => "type keyword(s) here", :type => "search", :value => "", :name => "search"}/
         %button.btn.btn-primary{:type => "submit"} Search
       %footer
         %p &copy; Company 2014
