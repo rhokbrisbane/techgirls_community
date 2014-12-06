@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :story do
-    user nil
-body "MyText"
+    body 'My story'
   end
-
 end
