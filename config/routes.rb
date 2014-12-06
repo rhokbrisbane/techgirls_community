@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   root "stories#index"
 
-  resources :stories, only: [:index, :create, :update]
+  resources :stories, only: [:index, :create]
 end
