@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root 'stories#index'
 
+  get '/send_sms', to: 'sms#send'
+
   resources :stories, only: [:index, :create]
 end
