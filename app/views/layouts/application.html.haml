@@ -1,0 +1,41 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    = viewport_meta_tag
+    %title= content_for?(:title) ? yield(:title) : "Tech Girls Communtiy"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+
+  %body
+    %nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      .container
+        .navbar-header
+          %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand(href="#") Tech Girls Communtiy
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to "Search", "#search"
+
+    .container
+      .row
+        .col-md-12
+          = bootstrap_flash
+          = yield
+    #search
+      %button.close{:type => "button"} ×
+      %form
+        %input{:placeholder => "type keyword(s) here", :type => "search", :value => ""}/
+        %button.btn.btn-primary{:type => "submit"} Search
+      %footer
+        %p &copy; Company 2014
