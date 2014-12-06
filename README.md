@@ -4,6 +4,8 @@
 
 Started on 06/12/14 at [RHoK Brisbane](http://rhokbrisbane.org/)
 
+[Admin area](http://lvh.me:3000/admin)
+
 ## First admin user
 
 | Email                   | Password   |
