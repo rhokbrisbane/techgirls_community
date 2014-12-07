@@ -9,6 +9,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_attributes)
+
     if @story.save
       send_email(@story.super_hero.name, @story.super_hero.email)
       redirect_to root_path, notice: 'Story created successfully'
@@ -21,7 +22,7 @@ class StoriesController < ApplicationController
   private
 
   def story_attributes
-    params.require(:story).permit(:body, 
+    params.require(:story).permit(:body,
                                   super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
 
   end
