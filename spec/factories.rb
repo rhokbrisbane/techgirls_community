@@ -11,7 +11,7 @@ FactoryGirl.define do
   end
 
   factory :story do
-    body 'My story'
+    body { Faker::Lorem.paragraph } 
     super_hero { FactoryGirl.create(:super_hero) }
   end
 end
