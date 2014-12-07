@@ -32,7 +32,7 @@ class StoriesController < ApplicationController
       to_name:    to_name,
       to_email:   to_email,
       subject:    'Your story has been posted',
-      html:       render(layout: false,template: 'stories/email.html.haml').first
+      html:       render_to_string(layout: false,template: 'stories/email.html.haml').first
     )
   end
 end
