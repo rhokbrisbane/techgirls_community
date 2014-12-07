@@ -109,6 +109,9 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     inherited_resources (1.5.1)
       actionpack (>= 3.2, < 4.2)
@@ -135,6 +138,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.1.0)
@@ -255,6 +259,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   haml-rails
+  httparty
   jquery-rails
   mandrill-api
   pg
