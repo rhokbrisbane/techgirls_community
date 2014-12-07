@@ -40,7 +40,7 @@
       =form_tag root_path, :method => "get" do 
         %input{:placeholder => "type keyword(s) here", :type => "search", :value => "", :name => "search"}/
         %button.btn.btn-primary{:type => "submit"} Search
-    
+      
     #create_story.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog"}
       .modal-dialog.modal-lg
         .modal-content
@@ -52,11 +52,21 @@
           .modal-body.clearfix
             - @story ||= Story.new
             - @story.build_super_hero unless @story.super_hero.present?
-            = form_for(@story, html: { class: 'form-vertical' }) do |f|
+            = simple_form_for(@story, url: stories_path, method: :post, html: { class: 'form-vertical' }) do |f|
+              = f.simple_fields_for :super_hero do |shf| 
+                .col-md-6.clearfix
+                  = shf.input :name, label: "What's your superhero name?"
+                  = shf.input :postcode
+                  = shf.input :year_at_school
+                  = shf.input :phone
+                .col-md-6.clearfix
+                  = shf.input :super_power, label: "What's your super power?"
+                  = shf.input :age
+                  = shf.input :email
               .col-md-12.clearfix
-                = f.text_field :body, label: 'Why do I love technology'
+                = f.input :body, as: :text, label: 'Why do I love technology'
 
               .action.col-md-12.clearfix
-                = f.submit 'Create Story'
+                = f.button :submit, 'Create Story'
       %footer
         %p &copy; Company 2014
