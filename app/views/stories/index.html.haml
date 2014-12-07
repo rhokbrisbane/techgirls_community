@@ -1,6 +1,17 @@
-- if @stories.present?
-  - @stories.each do |story|
-    .body= story.body
-- else
-  %p
-    There were no stories entered yet.
+
+.map
+  .placeholder Map Placeholder
+
+%h3 Tech Girls
+
+.stories
+  - if @stories.present?
+    - @stories.each do |story|
+      .story
+      	%span.name Jessica
+      	%span.superpower TechGirl SuperStar
+      	.body= story.body
+  - else
+    %p
+      There were no stories entered yet.
+    
