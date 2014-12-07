@@ -5,4 +5,9 @@ class SuperHero < ActiveRecord::Base
   validates :name, :email, uniqueness: true
 
   has_one :story
+ 
+  def archetype_data
+    @data ||= Archetype.with_key(key: archetype.to_sym)
+    @data
+  end
 end
