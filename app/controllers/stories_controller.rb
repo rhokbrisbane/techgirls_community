@@ -7,6 +7,10 @@ class StoriesController < ApplicationController
     end
   end
 
+  def show
+    @story = Story.includes(:super_hero).find(params[:id])
+  end
+
   def create
     @story = Story.new(story_attributes)
 
@@ -35,7 +39,7 @@ class StoriesController < ApplicationController
       to_name:    to_name,
       to_email:   to_email,
       subject:    'Your story has been posted',
-      html:       render_to_string(layout: false,template: 'stories/email.html.haml').first
+      html:       render_to_string(layout: false,template: 'stories/email.html.haml')
     )
   end
 end

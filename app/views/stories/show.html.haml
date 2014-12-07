@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .box
+        .box-icon
+          %span
+            =image_tag(@story.super_hero.archetype_data[:face_image_name])
+        .info
+          %h4.text-center 
+            = "#{ @story.super_hero.name } | #{ @story.super_hero.super_power }" 
+          %p
+            = @story.body
