@@ -72,6 +72,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.8.9)
+    database_cleaner (1.3.0)
     debugger-linecache (1.2.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -92,6 +93,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     formtastic (3.1.2)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.1.1)
@@ -202,6 +205,9 @@ GEM
       sprockets-rails (~> 2.0)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
+    simple_form (3.1.0.rc2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -243,9 +249,11 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-sass-extras
   coffee-rails (~> 4.0.0)
+  database_cleaner
   devise
   dotenv-rails
   factory_girl_rails
+  faker
   haml-rails
   jquery-rails
   mandrill-api
@@ -257,6 +265,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   shoulda-matchers
+  simple_form
   spring
   textacular
   twilio-ruby
