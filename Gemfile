@@ -13,7 +13,6 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'mandrill-api'
 gem 'pg'
-gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 4.0.3'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
@@ -37,4 +36,8 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
