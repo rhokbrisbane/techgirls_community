@@ -8,8 +8,8 @@
   - if @stories.present?
     - @stories.each do |story|
       .story
-        %span.name Jessica
-        %span.superpower TechGirl SuperStar
+        %span.name= story.super_hero.name
+        %span.superpower= story.super_hero.super_power
         .body= story.body
   - else
     %p
