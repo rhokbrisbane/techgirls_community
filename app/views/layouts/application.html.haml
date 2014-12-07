@@ -37,10 +37,10 @@
           = yield
     #search
       %button.close{:type => "button"} ×
-      =form_tag root_path, :method => "get" do 
+      =form_tag root_path, :method => "get" do
         %input{:placeholder => "type keyword(s) here", :type => "search", :value => "", :name => "search"}/
         %button.btn.btn-primary{:type => "submit"} Search
-      
+
     #create_story.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog"}
       .modal-dialog.modal-lg
         .modal-content
@@ -53,7 +53,7 @@
             - @story ||= Story.new
             - @story.build_super_hero unless @story.super_hero.present?
             = simple_form_for(@story, url: stories_path, method: :post, html: { class: 'form-vertical' }) do |f|
-              = f.simple_fields_for :super_hero do |shf| 
+              = f.simple_fields_for :super_hero do |shf|
                 .col-md-6.clearfix
                   = shf.input :name, label: "What's your superhero name?"
                   = shf.input :archetype, as: :radio_buttons, collection: Archetype.form_collection, wrapper: :vertical_radio_and_checkboxes, label: 'What tech girl are you?'
@@ -70,4 +70,4 @@
               .action.col-md-12.clearfix
                 = f.button :submit, 'Create Story'
     %footer
-      %p &copy; Company 2014
+      %p &copy; Tech Girls 2014

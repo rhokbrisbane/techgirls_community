@@ -25,6 +25,10 @@ Started on 06/12/14 at [RHoK Brisbane](http://rhokbrisbane.org/)
 
         cd ~/projects/techgirls_communtiy
 
+        cp config/database.yml.example config/database.yml
+
+        cp .env.example .env
+
         bundle install
 
         rake db:setup
