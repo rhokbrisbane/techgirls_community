@@ -7,10 +7,11 @@ FactoryGirl.define do
     year_at_school '9'
     email { Faker::Internet.email }
     phone '90994242'
+    archetype 'artist'
   end
 
   factory :story do
-    body 'My story'
-    super_hero { FactoryGirl.create(:super_hero) }
+    body { Faker::Lorem.paragraph } 
+    super_hero
   end
 end

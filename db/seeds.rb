@@ -9,5 +9,7 @@
 case Rails.env
 when "development"
 
+	FactoryGirl.create_list(:story, 10)
+
 end
 
