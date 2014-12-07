@@ -7,6 +7,7 @@ FactoryGirl.define do
     year_at_school '9'
     email { Faker::Internet.email }
     phone '90994242'
+    archetype 'artist'
   end
 
   factory :story do
