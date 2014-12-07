@@ -14,7 +14,7 @@
               .message-inner
                 .message-head.clearfix
                   .avatar.pull-left
-                    %a{:href => "#"}
+                    = link_to(story_path(story)) do
                       = image_tag(story.super_hero.archetype_data[:face_image_name])
                   .user-detail
                     %h5.handle
