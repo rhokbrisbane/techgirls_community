@@ -7,6 +7,10 @@ class StoriesController < ApplicationController
     end
   end
 
+  def show
+    @story = Story.includes(:super_hero).find(params[:id])
+  end
+
   def create
     @story = Story.new(story_attributes)
     if @story.save
