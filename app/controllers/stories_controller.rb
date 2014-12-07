@@ -8,7 +8,21 @@ class StoriesController < ApplicationController
   end
 
   def create
-    # send_email(@story.author_name, @story.author_email)
+    @story = Story.new(story_attributes)
+    if @story.save
+      send_email(@story.super_hero.name, @story.super_hero.email)
+      redirect_to root_path, notice: 'Story created successfully'
+    else
+      flash[:error] = "Could not create story. Please open 'Write a Story' dialog to check what went wrong."
+      render :index, status: 400
+    end
+  end
+
+  private
+
+  def story_attributes
+    params.require(:story).permit(:body, 
+                                  super_hero_attributes: [:name, :superpower, :postcode, :age, :year_at_school, :email, :phone] )
   end
 
   def send_email(to_name, to_email)
