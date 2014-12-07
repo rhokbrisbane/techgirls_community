@@ -70,4 +70,5 @@
               .action.col-md-12.clearfix
                 = f.button :submit, 'Create Story'
     %footer
-      %p &copy; Tech Girls 2014
+      .text-center
+        %p= "&copy; Tech Girls #{Date.today.year}".html_safe
