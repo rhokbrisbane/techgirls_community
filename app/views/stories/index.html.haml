@@ -2,5 +2,11 @@
 .map
   .placeholder Map Placeholder
 
-- @stories.each do |story|
-  .body= story.body
+%h3 Tech Girls
+
+.stories
+  - @stories.each do |story|
+    .story
+      %span.name Jessica
+      %span.superpower TechGirl SuperStar
+      .body= story.body
