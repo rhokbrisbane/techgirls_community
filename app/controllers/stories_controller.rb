@@ -21,7 +21,7 @@ class StoriesController < ApplicationController
   private
 
   def story_attributes
-    params.require(:story).permit(:body, 
+    params.require(:story).permit(:body,
                                   super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
 
   end
@@ -33,7 +33,7 @@ class StoriesController < ApplicationController
       to_name:    to_name,
       to_email:   to_email,
       subject:    'Your story has been posted',
-      html:       render_to_string(layout: false,template: 'stories/email.html.haml').first
+      html:       render_to_string(layout: false,template: 'stories/email.html.haml')
     )
   end
 end
