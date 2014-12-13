@@ -6,9 +6,15 @@ class Story < ActiveRecord::Base
 
   after_create :create_map_point
 
+  # after_destroy :remove_map_point
+
   private
 
   def create_map_point
     MapAdapter.create_point(super_hero.postcode)
   end
+
+  # def remove_map_point
+  #   MapAdapter.remove_point(super_hero.postcode)
+  # end
 end

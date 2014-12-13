@@ -9,6 +9,16 @@ class MapAdapter
         })
     end
 
+    # def remove_point(postcode)
+    #   ::HTTParty.post(map_provider_url,
+    #     headers: headers,
+    #     body: {
+    #       _method: :delete,
+    #       address: "#{postcode} Australia",
+    #       data: '{}'
+    #     })
+    # end
+
     private
 
     def map_provider_url
