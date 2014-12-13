@@ -16,7 +16,6 @@ class StoriesController < ApplicationController
 
     if @story.save
       send_email(@story.super_hero.name, @story.super_hero.email)
-      MapAdapter.create_point(@story.super_hero.postcode)
       redirect_to root_path, notice: 'Story created successfully'
     else
       flash[:error] = "Could not create story. Please open 'Write a Story' dialog to check what went wrong."
