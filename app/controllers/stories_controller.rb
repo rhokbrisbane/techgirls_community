@@ -1,9 +1,9 @@
 class StoriesController < ApplicationController
   def index
     if terms = params[:search]
-      @stories = Story.basic_search(terms)
+      @stories = Story.basic_search(terms).order(created_at: :desc)
     else
-      @stories = Story.all
+      @stories = Story.order(created_at: :desc)
     end
   end
 
