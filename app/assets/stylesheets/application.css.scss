@@ -1,9 +1,17 @@
- /*
+/*
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "search";
-@import "stories";
-@import "timeline";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'search';
+@import 'stories';
+@import 'timeline';
+
+body {
+  margin-top: 80px;
+}
+
+footer {
+  margin: 30px 0;
+}

@@ -22,7 +22,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
 group :development do
+  gem 'quiet_assets'
   gem 'spring'
+  gem 'thin'
 end
 
 group :development, :test do

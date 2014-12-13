@@ -1,9 +1,9 @@
 class StoriesController < ApplicationController
   def index
     if terms = params[:search]
-      @stories = Story.basic_search(terms)
+      @stories = Story.basic_search(terms).order(created_at: :desc)
     else
-      @stories = Story.all
+      @stories = Story.order(created_at: :desc)
     end
   end
 
@@ -16,10 +16,8 @@ class StoriesController < ApplicationController
 
     if @story.save
       send_email(@story.super_hero.name, @story.super_hero.email)
-      MapAdapter.create_point(@story.super_hero.postcode)
       redirect_to root_path, notice: 'Story created successfully'
     else
-      flash[:error] = "Could not create story. Please open 'Write a Story' dialog to check what went wrong."
       render :index, status: 400
     end
   end
@@ -28,8 +26,7 @@ class StoriesController < ApplicationController
 
   def story_attributes
     params.require(:story).permit(:body,
-                                  super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
-
+      super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
   end
 
   def send_email(to_name, to_email)
