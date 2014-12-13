@@ -50,7 +50,12 @@
             %h4#myModalLabel.modal-title Write a story
 
           .modal-body.clearfix
-            - @story ||= Story.new
+            - if @story
+              :javascript
+                $('.modal').modal('show');
+            - else
+              - @story = Story.new
+
             - @story.build_super_hero unless @story.super_hero.present?
 
             = simple_form_for(@story, url: stories_path, method: :post, html: { class: 'form-vertical' }) do |f|

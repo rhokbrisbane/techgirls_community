@@ -18,7 +18,6 @@ class StoriesController < ApplicationController
       send_email(@story.super_hero.name, @story.super_hero.email)
       redirect_to root_path, notice: 'Story created successfully'
     else
-      flash.now[:error] = "Could not create story. Please open 'Write a Story' dialog to check what went wrong."
       render :index, status: 400
     end
   end
@@ -28,7 +27,6 @@ class StoriesController < ApplicationController
   def story_attributes
     params.require(:story).permit(:body,
       super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
-
   end
 
   def send_email(to_name, to_email)
