@@ -23,6 +23,7 @@ gem 'unicorn'
 
 group :development do
   gem 'spring'
+  gem 'thin'
 end
 
 group :development, :test do
