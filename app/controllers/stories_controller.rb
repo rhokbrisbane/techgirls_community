@@ -18,7 +18,7 @@ class StoriesController < ApplicationController
       send_email(@story.super_hero.name, @story.super_hero.email)
       redirect_to root_path, notice: 'Story created successfully'
     else
-      flash[:error] = "Could not create story. Please open 'Write a Story' dialog to check what went wrong."
+      flash.now[:error] = "Could not create story. Please open 'Write a Story' dialog to check what went wrong."
       render :index, status: 400
     end
   end
