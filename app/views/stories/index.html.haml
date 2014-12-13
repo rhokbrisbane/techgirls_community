@@ -1,9 +1,3 @@
-.map
-  -# %iframe.bigsky{src:'http://bigsky.io/maps/69a5807'}
-  %iframe.bigsky{src:'http://bigsky.io/maps/d30242b'}
-
-%h3 Tech Girls
-
 .stories
   - if @stories.present?
     #wallmessages.qa-message-list
@@ -30,3 +24,7 @@
   - else
     %p
       There were no stories entered yet.
+
+.map
+  -# %iframe.bigsky{src:'http://bigsky.io/maps/69a5807'}
+  %iframe.bigsky{src:'http://bigsky.io/maps/d30242b'}
