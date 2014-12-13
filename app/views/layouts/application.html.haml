@@ -55,7 +55,8 @@
               = f.simple_fields_for :super_hero do |shf|
                 .col-md-6.clearfix
                   = shf.input :name, label: "What's your superhero name?"
-                  = shf.input :archetype, as: :radio_buttons, collection: Archetype.form_collection, wrapper: :vertical_radio_and_checkboxes, label: 'What tech girl are you?'
+                  = shf.input :archetype, as: :radio_buttons, collection: Archetype.form_collection,
+                    wrapper: :vertical_radio_and_checkboxes, label: 'What tech girl are you?'
                   = shf.input :postcode
                   = shf.input :year_at_school
                 .col-md-6.clearfix
