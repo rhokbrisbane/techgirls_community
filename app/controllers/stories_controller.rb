@@ -28,7 +28,7 @@ class StoriesController < ApplicationController
 
   def story_attributes
     params.require(:story).permit(:body,
-                                  super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
+      super_hero_attributes: [:name, :super_power, :postcode, :age, :year_at_school, :email, :phone, :archetype] )
 
   end
 
