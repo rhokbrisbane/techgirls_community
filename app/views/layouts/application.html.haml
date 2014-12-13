@@ -10,7 +10,7 @@
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"
-    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
 
   %body
@@ -21,14 +21,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to("Tech Girls Community", root_path, class: 'navbar-brand')
+          = link_to('Tech Girls Community', root_path, class: 'navbar-brand')
+
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.navbar-left
-            %li
-              = modal_toggle "Write a Story", dialog: '#create_story'
+            %li= modal_toggle 'Write a Story', dialog: '#create_story'
           %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to "Search", "#search"
+            %li= link_to 'Search', '#search'
 
     .container
       .row
@@ -36,16 +35,16 @@
           = bootstrap_flash
           = yield
     #search
-      %button.close{:type => "button"} ×
-      =form_tag root_path, :method => "get" do
-        %input{:placeholder => "type keyword(s) here", :type => "search", :value => "", :name => "search"}/
-        %button.btn.btn-primary{:type => "submit"} Search
+      %button.close{type: "button"} ×
+      =form_tag root_path, method: "get" do
+        %input{placeholder: "type keyword(s) here", type: "search", value: "", name: "search"}/
+        %button.btn.btn-primary{type: "submit"} Search
 
-    #create_story.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog"}
+    #create_story.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog"}
       .modal-dialog.modal-lg
         .modal-content
           .modal-header
-            %button.close{"data-dismiss" => "modal", :type => "button"}
+            %button.close{"data-dismiss" => "modal", type: "button"}
               %span{"aria-hidden" => "true"} ×
               %span.sr-only Close
             %h4#myModalLabel.modal-title Write a story
